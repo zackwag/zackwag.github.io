@@ -176,14 +176,19 @@ dd {
     font-style: italic;
 }
 
+/* Mobile-specific styles */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        overflow: visible; /* Ensure content is not hidden */
+        max-width: 92.5%; /* Set maximum width */
     }
+
 
     .sidebar,
     .main-content {
         width: 100%;
+        overflow: visible; /* Ensure content is not hidden */
     }
 }
 
