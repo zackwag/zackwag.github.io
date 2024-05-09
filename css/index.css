@@ -181,7 +181,7 @@ dd {
     .container {
         flex-direction: column;
         overflow: visible; /* Ensure content is not hidden */
-        max-width: 92.5%; /* Set maximum width */
+        max-width: 90%; /* Set maximum width */
     }
 
 
