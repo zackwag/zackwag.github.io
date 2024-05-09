@@ -71,6 +71,14 @@ dd {
     margin: 0 auto;
 }
 
+.desktop-heading {
+    display: block;
+}
+
+.mobile-heading {
+    display: none;
+}
+
 .main-content {
     width: 80%;
     padding: 20px;
@@ -189,6 +197,24 @@ dd {
     .main-content {
         width: 100%;
         overflow: visible; /* Ensure content is not hidden */
+    }
+
+    .desktop-heading {
+        display: none; /* Hide the heading that is used for the desktop version */
+    }
+
+    .mobile-heading {
+        display: block;
+        text-align: center;
+        padding: 0.5em 0;
+    }
+
+    .mobile-heading h1 {
+        border: none;
+    }
+
+    .mobile-heading h3 {
+        border: none;
     }
 }
 
