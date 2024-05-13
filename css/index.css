@@ -75,6 +75,11 @@ dd {
     display: block;
 }
 
+.print-heading {
+    padding-top: 0.25em;
+    display: none;
+}
+
 .mobile-heading {
     display: none;
 }
@@ -180,6 +185,10 @@ dd {
     list-style-type: square;
 }
 
+.main-content .education {
+    display: none;
+}
+
 .italic {
     font-style: italic;
 }
@@ -188,19 +197,23 @@ dd {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        overflow: visible; /* Ensure content is not hidden */
-        max-width: 90%; /* Set maximum width */
+        overflow: visible;
+        /* Ensure content is not hidden */
+        max-width: 90%;
+        /* Set maximum width */
     }
 
 
     .sidebar,
     .main-content {
         width: 100%;
-        overflow: visible; /* Ensure content is not hidden */
+        overflow: visible;
+        /* Ensure content is not hidden */
     }
 
     .desktop-heading {
-        display: none; /* Hide the heading that is used for the desktop version */
+        display: none;
+        /* Hide the heading that is used for the desktop version */
     }
 
     .mobile-heading {

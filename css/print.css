@@ -1,0 +1,52 @@
+/* Print Styles */
+@media print {
+    body,
+    html {
+        background: none; /* Remove background color */
+        color: #000; /* Set text color to black */
+        font-size: 12pt; /* Adjust font size for better readability */
+        margin: 1cm; /* Set page margins */
+    }
+
+    .container,
+    .sidebar,
+    .main-content {
+        width: 100%; /* Set width to full for printing */
+        margin: 0; /* Reset margins */
+        padding: 0; /* Reset padding */
+    }
+
+    .sidebar,
+    .mobile-heading {
+        display: none; /* Hide sidebar and headings */
+    }
+
+    .job-title {
+        display: none;
+    }
+
+    .preamble {
+        display: none;
+    }
+
+    .print-heading {
+        display: block;
+    }
+
+    .main-content .education {
+        display: block;
+    }
+
+    .main-content .education .degree {
+        margin-left: 0;
+    }
+
+    .work-experience {
+        margin-bottom: -1em;
+        overflow: auto;
+    }
+
+    .work-experience ol {
+        margin-left: -1.25em;
+    }
+}
