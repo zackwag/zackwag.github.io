@@ -21,11 +21,8 @@ window.addEventListener("DOMContentLoaded", function () {
         // Check whether yearEnd is not null and call getYear accordingly
         let relativeYearText = yearEnd !== null ? getYear(yearStart, yearEnd) : getYear(yearStart);
 
-        // Create a text node with the result from getYear
-        let relativeYearNode = document.createTextNode(relativeYearText);
-
-        // Replace the original element with the new text node
-        element.parentNode.replaceChild(relativeYearNode, element);
+        // Set the element's text to be the newly created string
+        element.textContent = relativeYearText;
     });
 });
 
