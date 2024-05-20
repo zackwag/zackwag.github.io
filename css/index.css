@@ -189,7 +189,11 @@ dd {
     display: none;
 }
 
-.italic {
+.work-experience .product {
+    font-weight: 500;
+}
+
+.work-experience .company {
     font-style: italic;
 }
 
