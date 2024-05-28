@@ -10,7 +10,10 @@ function getYear(yearStart, yearEnd) {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".relativeYear").forEach((element) => {
+    let relativeYearElements = document.querySelectorAll(".relativeYear");
+    for(let i = 0; i < relativeYearElements.length; i++) {
+        let element = relativeYearElements[i];
+
         // Retrieve and parse the yearStart value
         let yearStart = parseInt(element.getAttribute("data-year-start"));
 
@@ -22,7 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
         let relativeYearText = yearEnd !== null ? getYear(yearStart, yearEnd) : getYear(yearStart);
 
         // Set the element's text to be the newly created string
-        element.textContent = relativeYearText;
-    });
+        element.replaceWith(relativeYearText);
+    }
 });
-
