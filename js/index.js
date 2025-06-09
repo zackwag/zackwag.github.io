@@ -11,7 +11,7 @@ function getYear(yearStart, yearEnd) {
 
 window.addEventListener("DOMContentLoaded", function () {
     let relativeYearElements = document.querySelectorAll(".relativeYear");
-    for(let i = 0; i < relativeYearElements.length; i++) {
+    for (let i = 0; i < relativeYearElements.length; i++) {
         let element = relativeYearElements[i];
 
         // Retrieve and parse the yearStart value

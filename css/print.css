@@ -1,32 +1,47 @@
-/* Print Styles */
 @media print {
+    @page {
+        margin: 1cm;
+        /* Actual printed page margin */
+    }
+
     body,
     html {
-        background: none; /* Remove background color */
-        color: #000; /* Set text color to black */
-        font-size: 12pt; /* Adjust font size for better readability */
-        margin: 1cm; /* Set page margins */
+        background: none;
+        /* Remove background color */
+        color: #000;
+        /* Set text color to black */
+        font-size: 12pt;
+        /* Adjust font size for better readability */
+        margin: 0;
+        /* Reset margin here to avoid double margin */
+    }
+
+    h1 {
+        font-size: 17pt;
+    }
+
+    h2 {
+        font-size: 15pt;
+    }
+
+    h3 {
+        font-size: 13pt;
     }
 
     .container,
     .sidebar,
     .main-content {
-        width: 100%; /* Set width to full for printing */
-        margin: 0; /* Reset margins */
-        padding: 0; /* Reset padding */
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .sidebar,
-    .mobile-heading {
-        display: none; /* Hide sidebar and headings */
-    }
-
-    .job-title {
-        display: none;
-    }
-
+    .mobile-heading,
+    .job-title,
     .preamble {
         display: none;
+        /* Hide sidebar and headings */
     }
 
     .print-heading {
