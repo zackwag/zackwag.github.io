@@ -25,6 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
         let relativeYearText = yearEnd !== null ? getYear(yearStart, yearEnd) : getYear(yearStart);
 
         // Set the element's text to be the newly created string
-        element.replaceWith(relativeYearText);
+        element.textContent = relativeYearText;
     }
 });
