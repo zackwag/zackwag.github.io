@@ -1,34 +1,37 @@
 @media print {
     @page {
         margin: 1cm;
-        /* Actual printed page margin */
     }
 
     body,
     html {
         background: none;
-        /* Remove background color */
         color: #000;
-        /* Set text color to black */
-        font-size: 12pt;
-        /* Adjust font size for better readability */
+        font-size: 10.5pt;
         margin: 0;
-        /* Reset margin here to avoid double margin */
+        height: auto;
     }
 
     h1 {
-        font-size: 17pt;
+        font-size: 16pt;
     }
 
     h2 {
-        font-size: 15pt;
-    }
-
-    h3 {
         font-size: 13pt;
     }
 
-    .container,
+    h3 {
+        font-size: 11pt;
+    }
+
+    /* Override flex layout from index.css */
+    .container {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .sidebar,
     .main-content {
         width: 100%;
@@ -41,7 +44,6 @@
     .job-title,
     .preamble {
         display: none;
-        /* Hide sidebar and headings */
     }
 
     .print-heading {
@@ -56,12 +58,31 @@
         margin-left: 0;
     }
 
-    .work-experience {
-        margin-bottom: -1em;
-        overflow: auto;
+    /* Keep job entries together across page breaks */
+    .work-experience>ul>li {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
-    .work-experience ol {
+    .work-experience {
+        margin-bottom: -1em;
+        overflow: visible;
+    }
+
+    .work-experience ul {
         margin-left: -1.25em;
+    }
+
+    /* Show URLs when printed */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #555;
+    }
+
+    a[href^="#"]::after,
+    a[href^="mailto:"]::after,
+    a[href^="tel:"]::after {
+        content: none;
     }
 }
