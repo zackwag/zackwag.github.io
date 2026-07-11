@@ -1,0 +1,19 @@
+---
+import type { Job } from '../data/resume';
+
+interface Props {
+  job: Job;
+}
+
+const { job } = Astro.props;
+---
+<li>
+  <h3>{job.title} <time datetime={job.datetime}>{job.dateRange}</time></h3>
+  {job.promotion && <p class="promotion">{job.promotion}</p>}
+  <h4><span class="product">{job.product}</span> &bull; <span class="company">{job.company}</span></h4>
+  <p>{job.summary}</p>
+  <ul>
+    {job.bullets.map((bullet) => <li set:html={bullet} />)}
+  </ul>
+  <p>Technologies: {job.technologies}</p>
+</li>

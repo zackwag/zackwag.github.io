@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import JobEntry from '../components/JobEntry.astro';
+import RelativeYear from '../components/RelativeYear.astro';
+import '../styles/global.css';
+import { contact, jobs, education, experienceStartYear } from '../data/resume';
+---
+<BaseLayout title={`${contact.name} | ${contact.title} in Philadelphia`}>
+  <div class="container">
+    <Sidebar />
+    <div class="main-content">
+      <div class="desktop-heading">
+        <h1>{contact.name}</h1>
+        <address class="print-heading">{contact.location} &bull; {contact.phoneDisplay} &bull; {contact.email}</address>
+        <h3 class="job-title">{contact.title}</h3>
+      </div>
+      <div class="preamble">
+        <h2>About Me</h2>
+        <p>
+          I am a {contact.title} with <RelativeYear yearStart={experienceStartYear} /> of experience designing and building
+          distributed systems at scale. I specialize in Java and Go, with a background spanning C#, Python, and TypeScript.
+          I hold a Bachelor of Science in Computer Science from West Chester University and live in South Philadelphia with
+          my wife Ellen, our daughter Amelia, our son Robert, and our two beagles.
+        </p>
+        <p>
+          Outside of work, I enjoy home automation, collecting classic rock vinyl, films, gaming, and cheering for the
+          Phillies — usually all at once.
+        </p>
+      </div>
+      <div class="work-experience">
+        <h2>Work Experience</h2>
+        <ul>
+          {jobs.map((job) => <JobEntry job={job} />)}
+        </ul>
+      </div>
+      <div class="education">
+        <h2>Education</h2>
+        <div class="degree">
+          <h3>{education.degree} <time datetime={education.datetime}>{education.dateRange}</time></h3>
+          <h4><span class="product">{education.field}</span> &bull; <span class="company">{education.school}</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

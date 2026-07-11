@@ -1,0 +1,12 @@
+---
+interface Props {
+  yearStart: number;
+  yearEnd?: number;
+}
+
+const { yearStart, yearEnd } = Astro.props;
+const end = yearEnd ?? new Date().getFullYear();
+const diff = end - yearStart;
+const label = `${diff} year${diff === 1 ? '' : 's'}`;
+---
+<span>{label}</span>

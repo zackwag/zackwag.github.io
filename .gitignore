@@ -1,2 +1,7 @@
 ### mac ###
 .DS_Store
+
+# Astro
+dist/
+node_modules/
+.astro/
