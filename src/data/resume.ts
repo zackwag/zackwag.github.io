@@ -16,6 +16,16 @@ export interface Skill {
   yearEnd?: number;
 }
 
+export interface Patent {
+  title: string;
+  patentNumber: string;
+  dateGranted: string;
+  datetime: string;
+  assignee: string;
+  coInventors: string[];
+  summary: string;
+}
+
 export const contact = {
   name: 'Zachary Wagner',
   title: 'Staff Software Engineer',
@@ -88,6 +98,18 @@ export const jobs: Job[] = [
       'Solely responsible for all technical decisions, development, and maintenance across the organization\'s digital properties for over a decade',
     ],
     technologies: 'C#, Microsoft T-SQL',
+  },
+];
+
+export const patents: Patent[] = [
+  {
+    title: 'Device Synchronization for Audiovisual Content',
+    patentNumber: 'US 12,250,421 B2',
+    dateGranted: 'Mar 11, 2025',
+    datetime: '2025-03-11',
+    assignee: 'Comcast Cable Communications, LLC',
+    coInventors: ['Tony Nguyen', 'Yong Ji', 'Alison Stiel'],
+    summary: 'Systems, apparatuses, and methods for synchronizing output across multiple user devices by mapping what a user is watching to functionality on secondary devices. Manifest files describing audio and video features of content segments let secondary devices trigger visual effects in sync with a primary device\'s playback.',
   },
 ];
 
