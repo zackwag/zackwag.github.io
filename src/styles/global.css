@@ -97,6 +97,7 @@ address {
 .contact-info,
 .skills,
 .education,
+.patents,
 .work-experience {
     margin-bottom: 20px;
 }
@@ -138,7 +139,8 @@ address {
     margin-left: 0.75em;
 }
 
-.degree {
+.degree,
+.patent {
     margin-left: 0.75em;
 }
 
@@ -216,11 +218,13 @@ address {
     display: none;
 }
 
-.work-experience .product {
+.work-experience .product,
+.patents .product {
     font-weight: 500;
 }
 
-.work-experience .company {
+.work-experience .company,
+.patents .company {
     font-style: italic;
 }
 

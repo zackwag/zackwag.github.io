@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar.astro';
 import JobEntry from '../components/JobEntry.astro';
 import RelativeYear from '../components/RelativeYear.astro';
 import '../styles/global.css';
-import { contact, jobs, education, experienceStartYear } from '../data/resume';
+import { contact, jobs, patents, education, experienceStartYear } from '../data/resume';
 ---
 <BaseLayout title={`${contact.name} | ${contact.title} in Philadelphia`}>
   <div class="container">
@@ -40,6 +40,17 @@ import { contact, jobs, education, experienceStartYear } from '../data/resume';
           <h3>{education.degree} <time datetime={education.datetime}>{education.dateRange}</time></h3>
           <h4><span class="product">{education.field}</span> &bull; <span class="company">{education.school}</span></h4>
         </div>
+      </div>
+      <div class="patents">
+        <h2>Patents</h2>
+        {patents.map((patent) => (
+          <div class="patent">
+            <h3>{patent.title} <time datetime={patent.datetime}>{patent.dateGranted}</time></h3>
+            <h4><span class="product">{patent.patentNumber}</span> &bull; <span class="company">{patent.assignee}</span></h4>
+            <p>{patent.summary}</p>
+            <p>Co-inventors: {patent.coInventors.join(', ')}</p>
+          </div>
+        ))}
       </div>
     </div>
   </div>
