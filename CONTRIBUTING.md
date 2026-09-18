@@ -19,6 +19,7 @@ Requires Node >= 22.12.0.
 npm run dev       # local dev server
 npm run build     # production build
 npm run preview   # preview the production build
+npm run lint      # lint the codebase
 ```
 
 Source lives in `src/`; static assets in `public/`. This is a static site with no test suite.
