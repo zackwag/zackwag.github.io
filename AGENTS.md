@@ -18,11 +18,12 @@ Requires Node >= 22.12.0.
 npm run dev       # local dev server
 npm run build     # production build to dist/
 npm run preview   # preview the production build
+npm run lint      # lint the codebase (ESLint)
 ```
 
 ## Test
 
-No automated test suite currently exists.
+No automated test suite currently exists. A "Lint" CI job runs `npm run lint` (ESLint, including `eslint-plugin-astro`) on pull requests and pushes to `main`.
 
 ## Repository structure
 
