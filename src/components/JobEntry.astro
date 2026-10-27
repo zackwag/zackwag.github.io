@@ -15,5 +15,5 @@ const { job } = Astro.props;
   <ul>
     {job.bullets.map((bullet) => <li set:html={bullet} />)}
   </ul>
-  <p>Technologies: {job.technologies}</p>
+  <p><strong>Technologies:</strong> <em>{job.technologies}</em></p>
 </li>

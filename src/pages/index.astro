@@ -12,7 +12,7 @@ import { contact, jobs, patents, education, experienceStartYear } from '../data/
     <div class="main-content">
       <div class="desktop-heading">
         <h1>{contact.name}</h1>
-        <address class="print-heading">{contact.location} &bull; {contact.phoneDisplay} &bull; {contact.email}</address>
+        <address class="print-heading">{contact.location} &bull; {contact.phoneDisplay} &bull; {contact.email} &bull; <a href={contact.linkedin.href}>{contact.linkedin.label}</a> &bull; <a href={contact.github.href}>{contact.github.label}</a></address>
         <h3 class="job-title">{contact.title}</h3>
       </div>
       <div class="preamble">
@@ -48,7 +48,7 @@ import { contact, jobs, patents, education, experienceStartYear } from '../data/
             <h3>{patent.title} <time datetime={patent.datetime}>{patent.dateGranted}</time></h3>
             <h4><span class="product">{patent.patentNumber}</span> &bull; <span class="company">{patent.assignee}</span></h4>
             <p>{patent.summary}</p>
-            <p>Co-inventors: {patent.coInventors.join(', ')}</p>
+            <p><strong>Co-inventors:</strong> <em>{patent.coInventors.join(', ')}</em></p>
           </div>
         ))}
       </div>

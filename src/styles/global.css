@@ -299,12 +299,28 @@ address {
 
 /* Print */
 @media print {
+    @page {
+        margin: 1cm 1cm;
+    }
+
+    body,
+    html {
+        font-size: 8.5pt;
+    }
+
+    .container {
+        display: block;
+        height: auto;
+    }
+
     .sidebar {
         display: none;
     }
 
     .main-content {
         width: 100%;
+        padding: 0;
+        overflow: visible;
     }
 
     .desktop-heading {
@@ -313,5 +329,63 @@ address {
 
     .print-heading {
         display: block;
+    }
+
+    .preamble,
+    .job-title {
+        display: none;
+    }
+
+    h1 {
+        font-size: 18pt;
+        margin: 0 0 2pt 0;
+    }
+
+    h2 {
+        font-size: 11pt;
+        margin: 6pt 0 2pt 0;
+    }
+
+    h3 {
+        font-size: 10pt;
+        margin: 4pt 0 1pt 0;
+    }
+
+    h4 {
+        font-size: 9pt;
+        margin: 0 0 1pt 0;
+    }
+
+    .main-content p {
+        font-size: 8.5pt;
+        margin: 1pt 0;
+    }
+
+    .main-content .education {
+        display: block;
+    }
+
+    .promotion {
+        font-size: 8pt;
+        margin: -1pt 0 1pt 0;
+    }
+
+    .work-experience > ul > li {
+        padding-bottom: 4pt;
+        padding-left: 0;
+    }
+
+    .work-experience > ul > li:before,
+    .work-experience > ul > li:after {
+        display: none;
+    }
+
+    .work-experience li ul {
+        font-size: 8.5pt;
+        margin: 1pt 0;
+    }
+
+    .main-content .patents p {
+        font-size: 8pt;
     }
 }
